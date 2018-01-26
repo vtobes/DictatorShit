@@ -3,9 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Map_manager : MonoBehaviour {
+    GameObject _CurrectMap;
 
-	// Use this for initialization
-	void Start () {
+    public GameObject CurrectMap
+    {
+        get
+        {
+            return _CurrectMap;
+        }
+
+        set
+        {
+            _CurrectMap = value;
+        }
+    }
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
