@@ -37,7 +37,7 @@ public class Map_manager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
+		    GameMngr.Instance.getCurrentKeyScene();
 	}
 	
 	// Update is called once per frame
