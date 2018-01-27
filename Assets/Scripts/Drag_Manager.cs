@@ -84,6 +84,8 @@ public class Drag_Manager : MonoBehaviour {
 
                     //Aumentar el contador en distrito
                     map.CurrentMap.GetComponent<District>().incrementAgent(agentInfo);
+                    GameMngr.Instance.setDataDistrict(0,new DataDistrict(3));
+                    Debug.Log("numero de agentes: "+ GameMngr.Instance.GetDataDistric()[0].agents);
                 }
 
                 //TODO: destruir tropa
