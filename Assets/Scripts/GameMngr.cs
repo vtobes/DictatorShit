@@ -15,6 +15,8 @@ public class GameMngr : MonoBehaviour
     private int numAfiliados = 0;
     private int numPoblacion = 0;
 
+    private int Basedifficulty = 12;
+
 
 
 
@@ -33,7 +35,9 @@ public class GameMngr : MonoBehaviour
                 for(int i = 0; i < 10; i++)
                 {
                     DataDistrict[i] = new DataDistrict();
+                 
                 }
+
             }
 
             return game_instance;
@@ -100,5 +104,15 @@ public class GameMngr : MonoBehaviour
     public void setnumPoblacion(int num)
     {
         numAfiliados = num;
+    }
+
+    public int getBasedifficulty()
+    {
+        return Basedifficulty;
+    }
+
+    public void setBasedifficulty(int num)
+    {
+        Basedifficulty = num;
     }
 }

@@ -150,6 +150,7 @@ public class District : MonoBehaviour {
             default: break;
                 
         }
+        GameMngr.Instance.GetDataDistric()[IdDistrict].MaxAgents = maxPutPositions;
     }
 
     private void OnTriggerEnter(Collider other)
