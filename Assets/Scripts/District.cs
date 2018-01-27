@@ -195,6 +195,7 @@ public class District : MonoBehaviour {
                 
         }
         GameMngr.Instance.GetDataDistric()[IdDistrict].MaxAgents = maxPutPositions;
+        GameMngr.Instance.GetDataDistric()[IdDistrict].Mission = missionType;
     }
 
     private void OnTriggerEnter(Collider other)

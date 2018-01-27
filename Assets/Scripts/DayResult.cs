@@ -14,47 +14,104 @@ public class DayResult : MonoBehaviour {
 		
 	}
 
-    void Exito()
+    public void CheckSuccess()
     {
         
 
         float exito_total = 100;
-        
+
         for (int i = 0; i < GameMngr.Instance.GetDataDistric().Length; i++)
         {
             DataDistrict Ddistrict = GameMngr.Instance.GetDataDistric()[i];
-            float fallo_base = GameMngr.Instance.getBasedifficulty();
-            //correcion base por difcultad
-            switch (Ddistrict.Difficult)
-            {
-                case Enumdata.Influence.easy:
-                    fallo_base = GameMngr.Instance.getBasedifficulty();
-                    break;
-                case Enumdata.Influence.average:
-                    fallo_base *= 2;
-                    break;
-                case Enumdata.Influence.hard:
-                    fallo_base *= 3;
-                    break;
-                default:
-                    break;
-            }
-            // calculo de colocacion correcta
-            float bonus_colocacion_correcta, colocados;
-
-            switch (GameMngr.Instance.GetDataDistric()[i].Mission)
+            if ((Ddistrict.speecher + Ddistrict.spy + Ddistrict.hacker) > 0)
             {
 
-                case Enumdata.MissionType.rescue:
-                    //(GameMngr.Instance.GetDataDistric()[i].hacker);
-                    break;
-                case Enumdata.MissionType.inflitration:
-                    break;
-                case Enumdata.MissionType.propaganda:
-                    break;
+
+                float fallo_base = GameMngr.Instance.getBasedifficulty();
+                //correcion base por difcultad
+                switch (Ddistrict.Difficult)
+                {
+                    case Enumdata.Influence.easy:
+                        fallo_base = GameMngr.Instance.getBasedifficulty();
+                        break;
+                    case Enumdata.Influence.average:
+                        fallo_base *= 2;
+                        break;
+                    case Enumdata.Influence.hard:
+                        fallo_base *= 3;
+                        break;
+                    default:
+                        break;
+                }
+                // calculo de colocacion correcta
+                float bonus_colocacion_correcta, colocados;
+                int max_agents = Ddistrict.MaxAgents;
+
+                switch (GameMngr.Instance.GetDataDistric()[i].Mission)
+                {
+
+                    case Enumdata.MissionType.rescue:
+                        colocados = Ddistrict.hacker / max_agents;
+
+                        break;
+                    case Enumdata.MissionType.inflitration:
+                        colocados = Ddistrict.spy / max_agents;
+
+                        break;
+                    case Enumdata.MissionType.propaganda:
+                        colocados = Ddistrict.speecher / max_agents;
+
+                        break;
+                    default:
+                        colocados = 0;
+                        break;
+                }
+
+                bonus_colocacion_correcta = fallo_base - (colocados * fallo_base);
+
+                float segundafase = fallo_base * (1 - ((Ddistrict.speecher + Ddistrict.spy + Ddistrict.hacker) / max_agents));
+
+                float exito = exito_total - bonus_colocacion_correcta - segundafase;            
+                Ddistrict.CurrectSuccess = exito;
+
+                if (Ddistrict.infiltrado)
+                    Ddistrict.CurrectSuccess += 10;
+
+                //calcular si hay victoria
+                float result = Random.Range(0.0f, 100.0f);
+                if(result <= Ddistrict.CurrectSuccess)
+                {
+                    //vistoriaaa
+                    Success();
+                }
+                else
+                {
+                    //derrota
+                }
+
+
+
             }
+            else
+                Ddistrict.CurrectSuccess = 0;
+
+
         }
     
        
+    }
+
+<<<<<<< HEAD
+
+    public void Success()
+    {
+        if()
+        float troopBoost = Random.Range(0.0f, 100.0f);
+        GameMngr.Instance.MaxTroops
+=======
+    public void Defeat()
+    {
+
+>>>>>>> origin/master
     }
 }
