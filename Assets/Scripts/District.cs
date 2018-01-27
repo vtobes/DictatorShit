@@ -12,6 +12,11 @@ public class District : MonoBehaviour {
     public Enumdata.Influence influence;
     public Enumdata.MissionType missionType;
 
+    public GameObject rescueMission;
+    public GameObject propagandaMission;
+    public GameObject infiltrateMission;
+
+
     public GameObject highShade;
     public GameObject midShade;
     public GameObject lowShade;
@@ -132,7 +137,9 @@ public class District : MonoBehaviour {
             {
                 if(i>0)attachPositions[i].SetActive(false);
             }
-
+            propagandaMission.SetActive(false);
+            rescueMission.SetActive(false);
+            infiltrateMission.SetActive(true);
         }
         else if(missionType== Enumdata.MissionType.propaganda || missionType == Enumdata.MissionType.rescue)
         {
@@ -140,6 +147,19 @@ public class District : MonoBehaviour {
             for (int i = 0; i < attachPositions.Length; i++)
             {
                 attachPositions[i].SetActive(true);
+            }
+
+            if (missionType == Enumdata.MissionType.propaganda)
+            {
+                propagandaMission.SetActive(true);
+                rescueMission.SetActive(false);
+                infiltrateMission.SetActive(false);
+            }
+            else
+            {
+                propagandaMission.SetActive(false);
+                rescueMission.SetActive(true);
+                infiltrateMission.SetActive(false);
             }
 
         }
