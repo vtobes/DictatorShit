@@ -44,16 +44,21 @@ public class Drag_Manager : MonoBehaviour {
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, 8000))
             {
+<<<<<<< HEAD
                 if(hit.transform.gameObject.tag == "Movable")
                 {
                     _ObjectDragged = hit.transform.gameObject;
                 }
                 
+=======
+                if (hit.transform.gameObject.tag == "Movable") 
+                _ObjectDragged = hit.transform.gameObject;
+>>>>>>> origin/master
 
             }
 
-            if(_ObjectDragged != null && _ObjectDragged.tag == "Movable")
-                _ObjectDragged.transform.position = ray.origin + new Vector3(0, 0, 5);
+            if(_ObjectDragged != null )
+                _ObjectDragged.transform.position = ray.origin + new Vector3(0, 0,_ObjectDragged.transform.position.z - ray.origin.z);
 
         }
         else
@@ -66,7 +71,7 @@ public class Drag_Manager : MonoBehaviour {
     private void MovePositionObjectDraggedToMap()
     {
         Map_manager map = GetComponent<Map_manager>();
-        if ((_ObjectDragged != null) && (map.CurrectMap!=null))
+        if ((_ObjectDragged != null) && (map.CurrentMap!=null))
         {
             //checkear si puedes añadir tropas
             

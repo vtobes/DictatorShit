@@ -5,7 +5,7 @@ using UnityEngine;
 public class Map_manager : MonoBehaviour {
     GameObject _CurrectMap;
 
-    public GameObject CurrectMap
+    public GameObject CurrentMap
     {
         get
         {
