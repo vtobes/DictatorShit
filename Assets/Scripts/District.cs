@@ -84,25 +84,27 @@ public class District : MonoBehaviour {
         switch (missionType)
         {
             case Enumdata.MissionType.inflitration:
-                attachPositions = new GameObject[1];
-               
-               
-               
-                attachPositions[0] = Instantiate(new GameObject(), new Vector3(2.7f, 0, -2.7f), Quaternion.identity) ;
+                //attachPositions = new GameObject[1];
+
+                maxPutPositions = 1;
+
+                //attachPositions[0] = Instantiate(new GameObject(), new Vector3(2.7f, 0, -2.7f), Quaternion.identity) ;
                 break;
 
             case Enumdata.MissionType.propaganda:
-                attachPositions = new GameObject[3];
-                attachPositions[0]= Instantiate(new GameObject(), new Vector3(2.7f, 0, -2.7f), Quaternion.identity); 
-                attachPositions[1] = Instantiate(new GameObject(), new Vector3(-2.52f, 0, -2.91f), Quaternion.identity); 
-                attachPositions[2] = Instantiate(new GameObject(), new Vector3(2.48f, 0, 2.03f), Quaternion.identity); 
+                //attachPositions = new GameObject[3];
+                //attachPositions[0]= Instantiate(new GameObject(), new Vector3(2.7f, 0, -2.7f), Quaternion.identity); 
+                //attachPositions[1] = Instantiate(new GameObject(), new Vector3(-2.52f, 0, -2.91f), Quaternion.identity); 
+                //attachPositions[2] = Instantiate(new GameObject(), new Vector3(2.48f, 3.11f, -2.03f), Quaternion.identity); 
+                maxPutPositions = 3;
                 break;
-
+                
             case Enumdata.MissionType.rescue:
-                attachPositions = new GameObject[3];
-                attachPositions[0] = Instantiate(new GameObject(), new Vector3(2.7f, 0, -2.7f), Quaternion.identity);
-                attachPositions[1] = Instantiate(new GameObject(), new Vector3(-2.52f, 0, -2.91f), Quaternion.identity);
-                attachPositions[2] = Instantiate(new GameObject(), new Vector3(2.48f, 0, 2.03f), Quaternion.identity);
+                //attachPositions = new GameObject[3];
+                //attachPositions[0] = Instantiate(new GameObject(), new Vector3(2.7f, 0, -2.7f), Quaternion.identity);
+                //attachPositions[1] = Instantiate(new GameObject(), new Vector3(-2.52f, 0, -2.91f), Quaternion.identity);
+                //attachPositions[2] = Instantiate(new GameObject(), new Vector3(2.48f, 3.11f, -2.03f), Quaternion.identity);
+                maxPutPositions = 3;
                 break;
 
             default: break;

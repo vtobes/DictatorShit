@@ -71,12 +71,13 @@ public class Drag_Manager : MonoBehaviour {
             {
                 int num_positions = map.CurrentMap.GetComponent<District>().CurrentPosition;
                 //checkear si puedes añadir tropas
-                if (num_positions < map.CurrentMap.GetComponent<District>().AttachPositions.Length )
+                if (num_positions < map.CurrentMap.GetComponent<District>().MaxPutPositions )
                
                 {
                     //colocar tropa
                     _ObjectDragged.transform.position = map.CurrentMap.GetComponent<District>().AttachPositions[num_positions].transform.position;
                     //aumentar numero de tropa
+                    _ObjectDragged.tag = "Untagged";
                     map.CurrentMap.GetComponent<District>().CurrentPosition++;
                     //Identificar agente
                     AgentInfo agentInfo = _ObjectDragged.GetComponent<AgentInfo>();
