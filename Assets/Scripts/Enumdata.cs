@@ -5,11 +5,20 @@ using UnityEngine;
 
 public class Enumdata : MonoBehaviour {
 
-    public enum Asingados
+    public enum AgentType
     {
-        orador, hacker, espía
+        speecher, hacker, spy
     }
 
+    public enum Influence
+    {
+        easy, average, hard
+    }
+
+    public enum MissionType
+    {
+        inflitration, propaganda, rescue
+    }
     // Use this for initialization
     void Start () {
 		

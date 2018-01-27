@@ -78,9 +78,14 @@ public class Drag_Manager : MonoBehaviour {
                     _ObjectDragged.transform.position = map.CurrentMap.GetComponent<District>().AttachPositions[num_positions].transform.position;
                     //aumentar numero de tropa
                     map.CurrentMap.GetComponent<District>().CurrentPosition++;
+                    //Identificar agente
+                    AgentInfo agentInfo = _ObjectDragged.GetComponent<AgentInfo>();
+
+                    //Aumentar el contador en distrito
+                    map.CurrentMap.GetComponent<District>().incrementAgent(agentInfo);
                 }
 
-                //destruir tropa
+                //TODO: destruir tropa
             }
         }
     }

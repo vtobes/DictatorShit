@@ -5,9 +5,11 @@ using UnityEngine;
 public class AgentInfo : MonoBehaviour {
     
 
+    public Enumdata.AgentType agenttype;
+
     //public AgentType myAgent;
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
