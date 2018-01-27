@@ -71,13 +71,30 @@ public class DayResult : MonoBehaviour {
 
                 float segundafase = fallo_base * (1 - ((Ddistrict.speecher + Ddistrict.spy + Ddistrict.hacker) / max_agents));
 
-                float exito = exito_total - bonus_colocacion_correcta - segundafase;
-
+                float exito = exito_total - bonus_colocacion_correcta - segundafase;            
                 Ddistrict.CurrectSuccess = exito;
+
+                if (Ddistrict.infiltrado)
+                    Ddistrict.CurrectSuccess += 10;
+
+                //calcular si hay victoria
+                float result = Random.Range(0.0f, 100.0f);
+                if(result <= Ddistrict.CurrectSuccess)
+                {
+                    //vistoriaaa
+                }
+                else
+                {
+                    //derrota
+                }
+
+
 
             }
             else
                 Ddistrict.CurrectSuccess = 0;
+
+
         }
     
        
