@@ -108,11 +108,17 @@ public class DayResult : MonoBehaviour {
         if (GameMngr.Instance.GetDataDistric()[index].Mission == Enumdata.MissionType.propaganda ||
             GameMngr.Instance.GetDataDistric()[index].Mission == Enumdata.MissionType.rescue)
         {
+            GameMngr.Instance.GetDataDistric()[index].infiltrado = false;
+
             float troopBoost = Random.Range(0.0f, 100.0f);
             if(troopBoost <= 20.0f)
             {
                 GameMngr.Instance.MaxTroops++;
             }
+        }
+        else
+        {
+            GameMngr.Instance.GetDataDistric()[index].infiltrado = true;
         }
         GameMngr.Instance.GetDataDistric()[index].victories++;
         GameMngr.Instance.TotalPopulation += 1000;
