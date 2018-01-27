@@ -48,13 +48,28 @@ public class Drag_Manager : MonoBehaviour {
 
             }
 
-            if(_ObjectDragged != null)
+            if(_ObjectDragged != null && _ObjectDragged.tag == "Movable")
                 _ObjectDragged.transform.position = ray.origin + new Vector3(0, 0, 5);
 
         }
         else
         {
             _ObjectDragged = null;
+        }
+    }
+ 
+
+    private void MovePositionObjectDraggedToMap()
+    {
+        Map_manager map = GetComponent<Map_manager>();
+        if ((_ObjectDragged != null) && (map.CurrectMap!=null))
+        {
+            //checkear si puedes añadir tropas
+            
+            //colocar tropa
+
+            //aumentar numero de tropa
+
         }
     }
 
