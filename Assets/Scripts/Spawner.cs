@@ -20,7 +20,6 @@ public class Spawner : MonoBehaviour {
 
     private void OnMouseDown()
     {
-        Debug.Log("He entrado");
         newObject = Instantiate(objectToSpawn);
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         newObject.transform.position = ray.origin + new Vector3(0, 0, newObject.transform.position.z - ray.origin.z); ;
