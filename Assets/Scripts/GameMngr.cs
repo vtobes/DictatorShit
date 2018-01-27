@@ -4,6 +4,37 @@ using System.Collections;
 
 public class GameMngr : MonoBehaviour
 {
+    private int successMissions;
+
+    public int SuccessMissions
+    {
+        get
+        {
+            return successMissions;
+        }
+
+        set
+        {
+            successMissions = value;
+        }
+    }
+
+    private int failedMissions;
+
+
+    public int FailedMissions
+    {
+        get
+        {
+            return failedMissions;
+        }
+
+        set
+        {
+            failedMissions = value;
+        }
+    }
+
     [SerializeField]
     private int maxTroops;
 
@@ -106,7 +137,6 @@ public class GameMngr : MonoBehaviour
             return game_instance;
         }
     }
-
 
 
     public string getNextSceneToLoad()
