@@ -229,6 +229,8 @@ MonoBehaviour:
   - {fileID: 1100711570}
   - {fileID: 747747625}
   - {fileID: 311660436}
+  influence: 0
+  missionType: 0
 --- !u!1 &311660436
 GameObject:
   m_ObjectHideFlags: 0
