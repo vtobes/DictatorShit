@@ -1,9 +1,12 @@
 using UnityEngine;
 using System.Collections;
+
 //using System.Runtime.InteropServices;
 
 public class GameMngr : MonoBehaviour
 {
+    
+
     private int successMissions;
 
     public int SuccessMissions
@@ -196,7 +199,7 @@ public class GameMngr : MonoBehaviour
 
     public void setnumPoblacion(int num)
     {
-        numAfiliados = num;
+        numPoblacion = num;
     }
 
     public int getBasedifficulty()
@@ -207,5 +210,15 @@ public class GameMngr : MonoBehaviour
     public void setBasedifficulty(int num)
     {
         Basedifficulty = num;
+    }
+
+    public void setMaxTroops(int num)
+    {
+        maxTroops = num;
+    }
+
+    public int getMaxTroops()
+    {
+        return maxTroops;
     }
 }

@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Map_manager : MonoBehaviour {
 
-    
+    public Text affText;
+    public Text troopsText;
+
     GameObject[] _PutPositions;
     public GameObject[] PutPositions
     {
@@ -46,5 +49,8 @@ public class Map_manager : MonoBehaviour {
         {
             Debug.Log(CurrentMap.name);
         }
-	}
+
+        affText.text = GameMngr.Instance.AfiliateNumber.ToString();
+        troopsText.text = GameMngr.Instance.MaxTroops.ToString();
+    }
 }
