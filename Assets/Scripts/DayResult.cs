@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DayResult : MonoBehaviour {
-    
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    // Use this for initialization
+    void Start() {
+
+    }
+
+    // Update is called once per frame
+    void Update() {
+
+    }
 
     public void CheckSuccess()
     {
-        
+
 
         float exito_total = 100;
 
@@ -71,7 +71,7 @@ public class DayResult : MonoBehaviour {
 
                 float segundafase = fallo_base * (1 - ((Ddistrict.speecher + Ddistrict.spy + Ddistrict.hacker) / max_agents));
 
-                float exito = exito_total - bonus_colocacion_correcta - segundafase;            
+                float exito = exito_total - bonus_colocacion_correcta - segundafase;
                 Ddistrict.CurrectSuccess = exito;
 
                 if (Ddistrict.infiltrado)
@@ -79,10 +79,10 @@ public class DayResult : MonoBehaviour {
 
                 //calcular si hay victoria
                 float result = Random.Range(0.0f, 100.0f);
-                if(result <= Ddistrict.CurrectSuccess)
+                if (result <= Ddistrict.CurrectSuccess)
                 {
                     //vistoriaaa
-                    Success();
+                    Success(i);
                 }
                 else
                 {
@@ -97,21 +97,31 @@ public class DayResult : MonoBehaviour {
 
 
         }
-    
-       
+
+
     }
 
-<<<<<<< HEAD
 
-    public void Success()
-    {
-        if()
-        float troopBoost = Random.Range(0.0f, 100.0f);
-        GameMngr.Instance.MaxTroops
-=======
-    public void Defeat()
-    {
 
->>>>>>> origin/master
-    }
+    public void Success(int index)
+    {
+        if (GameMngr.Instance.GetDataDistric()[index].Mission == Enumdata.MissionType.propaganda ||
+            GameMngr.Instance.GetDataDistric()[index].Mission == Enumdata.MissionType.rescue)
+        {
+            float troopBoost = Random.Range(0.0f, 100.0f);
+            if(troopBoost <= 20.0f)
+            {
+                GameMngr.Instance.MaxTroops++;
+            }
+        }
+        GameMngr.Instance.GetDataDistric()[index].victories++;
+        GameMngr.Instance.TotalPopulation += 1000;
+        if(GameMngr.Instance.GetDataDistric()[index].victories % 3 == 0)
+        {
+            if(GameMngr.Instance.GetDataDistric()[index].Difficult != Enumdata.Influence.easy)
+            {
+                GameMngr.Instance.GetDataDistric()[index].Difficult--;
+            }
+        }
+    } 
 }
