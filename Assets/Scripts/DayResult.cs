@@ -44,8 +44,8 @@ public class DayResult : MonoBehaviour {
                         break;
                 }
                 // calculo de colocacion correcta
-                float bonus_colocacion_correcta, colocados;
-                int max_agents = Ddistrict.MaxAgents;
+                float bonus_colocacion_correcta, colocados=0;
+                float max_agents = Ddistrict.MaxAgents;
 
                 switch (GameMngr.Instance.GetDataDistric()[i].Mission)
                 {
@@ -62,9 +62,9 @@ public class DayResult : MonoBehaviour {
                         colocados = Ddistrict.speecher / max_agents;
 
                         break;
-                    default:
-                        colocados = 0;
-                        break;
+                    //default:
+                    //    colocados = 0;
+                    //    break;
                 }
 
                 bonus_colocacion_correcta = fallo_base - (colocados * fallo_base);
@@ -87,6 +87,7 @@ public class DayResult : MonoBehaviour {
                 else
                 {
                     //derrota
+                    Defeat(i);
                 }
 
 
@@ -97,7 +98,8 @@ public class DayResult : MonoBehaviour {
 
 
         }
-
+        GameMngr.Instance.GetDataDistric();
+        Debug.Log("holaaaaaaa");
 
     }
 
@@ -129,5 +131,19 @@ public class DayResult : MonoBehaviour {
                 GameMngr.Instance.GetDataDistric()[index].Difficult--;
             }
         }
-    } 
+    }
+    public void Defeat(int i)
+    {
+        DataDistrict Ddistrict = GameMngr.Instance.GetDataDistric()[i];
+        //eliminar 1 tropa del general
+        GameMngr.Instance.MaxTroops--;
+        //Regresar las tropas restantes
+
+        //aumenta derrota
+        Ddistrict.defeats++;
+        //- 500 poblacion
+        GameMngr.Instance.AfiliateNumber -= 500;
+        // añadi penalizacion de tres derrotas?
+
+    }
 }
