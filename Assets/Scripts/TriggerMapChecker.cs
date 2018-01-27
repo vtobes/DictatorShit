@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class TriggerMapChecker : MonoBehaviour {
 
-
+    public int maxPutPositions;
     public GameObject[] AttachPositions;
     Map_manager mapManager;
 
     // Use this for initialization
     void Start() {
+        maxPutPositions = 0;
+        GameObject gameManager = GameObject.Find("GameManager");
+        mapManager = gameManager.GetComponent<Map_manager>();
     }
 	
 	// Update is called once per frame
@@ -20,14 +23,14 @@ public class TriggerMapChecker : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Ha entrado");
-        //mapManager.currentMap = gameObject;
+        mapManager.CurrentMap = gameObject;
+        mapManager.PutPositions = AttachPositions;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Ha salido");
-        //mapManager.currentMap = null;
+        mapManager.CurrentMap = null;
+        mapManager.PutPositions = null;
     }
 
 }
