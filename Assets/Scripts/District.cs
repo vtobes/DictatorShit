@@ -8,6 +8,7 @@ public class District : MonoBehaviour {
 
 
     Map_manager mapManager;
+    public int IdDistrict;
     public Enumdata.Influence influence;
     public Enumdata.MissionType missionType;
 

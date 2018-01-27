@@ -84,8 +84,17 @@ public class Drag_Manager : MonoBehaviour {
 
                     //Aumentar el contador en distrito
                     map.CurrentMap.GetComponent<District>().incrementAgent(agentInfo);
-                    GameMngr.Instance.setDataDistrict(0,new DataDistrict(3));
-                    Debug.Log("numero de agentes: "+ GameMngr.Instance.GetDataDistric()[0].agents);
+
+
+                    DataDistrict Ddistrict = GameMngr.Instance.GetDataDistric()[map.CurrentMap.GetComponent<District>().IdDistrict];
+                    Ddistrict.hacker = map.CurrentMap.GetComponent<District>().HackerCount;
+                    Ddistrict.spy = map.CurrentMap.GetComponent<District>().SpyCount;
+                    Ddistrict.speecher = map.CurrentMap.GetComponent<District>().SpeecherCount;
+                    //GameMngr.Instance.setDataDistrict(map.CurrentMap.GetComponent<District>().IdDistrict, new DataDistrict();
+
+                    DataDistrict Dddistrict = GameMngr.Instance.GetDataDistric()[map.CurrentMap.GetComponent<District>().IdDistrict];
+
+                    Debug.Log("numero de agentes: "+ GameMngr.Instance.GetDataDistric()[map.CurrentMap.GetComponent<District>().IdDistrict]);
                 }
 
                 //TODO: destruir tropa
