@@ -25,6 +25,10 @@ public class GameMngr : MonoBehaviour
 
                 game_instance = gameManagerObject.AddComponent<GameMngr>();
                 Debug.Log("Se ha creado una instancia del GameMngr");
+                for(int i = 0; i < 10; i++)
+                {
+                    DataDistrict[i] = new DataDistrict();
+                }
             }
 
             return game_instance;
