@@ -31,6 +31,7 @@ public class Drag_Manager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        MovePositionObjectDraggedToMap();
         ManageDrag();
 
     }
@@ -64,14 +65,23 @@ public class Drag_Manager : MonoBehaviour {
     private void MovePositionObjectDraggedToMap()
     {
         Map_manager map = GetComponent<Map_manager>();
-        if ((_ObjectDragged != null) && (map.CurrentMap!=null))
+        if (Input.GetMouseButtonUp(0))
         {
-            //checkear si puedes añadir tropas
-            
-            //colocar tropa
+            if ((_ObjectDragged != null) && (map.CurrentMap != null))
+            {
+                int num_positions = map.CurrentMap.GetComponent<District>().CurrentPosition;
+                //checkear si puedes añadir tropas
+                if (num_positions < map.CurrentMap.GetComponent<District>().AttachPositions.Length )
+               
+                {
+                    //colocar tropa
+                    _ObjectDragged.transform.position = map.CurrentMap.GetComponent<District>().AttachPositions[num_positions].transform.position;
+                    //aumentar numero de tropa
+                    map.CurrentMap.GetComponent<District>().CurrentPosition++;
+                }
 
-            //aumentar numero de tropa
-
+                //destruir tropa
+            }
         }
     }
 
