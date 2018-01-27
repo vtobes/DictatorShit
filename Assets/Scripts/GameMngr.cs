@@ -4,6 +4,22 @@ using System.Collections;
 
 public class GameMngr : MonoBehaviour
 {
+    [SerializeField]
+    private int maxTroops;
+
+    public int MaxTroops
+    {
+        get
+        {
+            return maxTroops;
+        }
+
+        set
+        {
+            maxTroops = value;
+        }
+    }
+
     private int totalPopulation;
 
     public int TotalPopulation
@@ -18,6 +34,7 @@ public class GameMngr : MonoBehaviour
             totalPopulation = value;
         }
     }
+
 
     private int afiliateNumber;
 
@@ -34,7 +51,20 @@ public class GameMngr : MonoBehaviour
         }
     }
 
+    private int previousAfiliateNumber;
 
+    public int PreviousAfiliateNumber
+    {
+        get
+        {
+            return previousAfiliateNumber;
+        }
+
+        set
+        {
+            previousAfiliateNumber = value;
+        }
+    }
 
 
     private static GameMngr game_instance;
