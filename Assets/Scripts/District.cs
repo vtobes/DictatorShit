@@ -143,6 +143,24 @@ public class District : MonoBehaviour {
             }
 
         }
+
+        if(influence== Enumdata.Influence.easy) //FACIL
+        {
+            highShade.SetActive(false);
+            midShade.SetActive(false);
+            lowShade.SetActive(true);
+        }else if(influence== Enumdata.Influence.average) //MEDIO
+        {
+            highShade.SetActive(false);
+            midShade.SetActive(true);
+            lowShade.SetActive(false);
+        }
+        else //DIFICIL
+        {
+            highShade.SetActive(true);
+            midShade.SetActive(false);
+            lowShade.SetActive(false);
+        }
     }
 
     private void inicializePositions(Enumdata.MissionType missionType)
