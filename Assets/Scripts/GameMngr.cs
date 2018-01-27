@@ -45,6 +45,13 @@ public class GameMngr : MonoBehaviour
     private static string lastDance = "";
     private static string currentKeyScene = "015";
 
+    private int numAfiliados = 0;
+    private int numPoblacion = 0;
+
+    private int Basedifficulty = 12;
+
+
+
 
     public static GameMngr Instance
     {
@@ -58,6 +65,12 @@ public class GameMngr : MonoBehaviour
 
                 game_instance = gameManagerObject.AddComponent<GameMngr>();
                 Debug.Log("Se ha creado una instancia del GameMngr");
+                for(int i = 0; i < 10; i++)
+                {
+                    DataDistrict[i] = new DataDistrict();
+                 
+                }
+
             }
 
             return game_instance;
@@ -104,5 +117,35 @@ public class GameMngr : MonoBehaviour
     public DataDistrict[] GetDataDistric()
     {
         return DataDistrict;
+    }
+
+    public int getnumAfiliados()
+    {
+        return numAfiliados;
+    }
+
+    public void setnumAfiliados(int num)
+    {
+        numAfiliados = num;
+    }
+
+    public int getnumPoblacion()
+    {
+        return numPoblacion;
+    }
+
+    public void setnumPoblacion(int num)
+    {
+        numAfiliados = num;
+    }
+
+    public int getBasedifficulty()
+    {
+        return Basedifficulty;
+    }
+
+    public void setBasedifficulty(int num)
+    {
+        Basedifficulty = num;
     }
 }

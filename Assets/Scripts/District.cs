@@ -106,6 +106,8 @@ public class District : MonoBehaviour {
         SpyCount = 0;
 
         inicializePositions(missionType);
+
+        
     }
 	
 	// Update is called once per frame
@@ -117,6 +119,26 @@ public class District : MonoBehaviour {
         Debug.Log(HackerCount);
         Debug.Log("Numero de Espias:");
         Debug.Log(SpyCount);
+
+
+        if (missionType == Enumdata.MissionType.inflitration)
+        {
+
+            for(int i=0;i<attachPositions.Length ; i++)
+            {
+                if(i>0)attachPositions[i].SetActive(false);
+            }
+
+        }
+        else if(missionType== Enumdata.MissionType.propaganda || missionType == Enumdata.MissionType.rescue)
+        {
+
+            for (int i = 0; i < attachPositions.Length; i++)
+            {
+                attachPositions[i].SetActive(true);
+            }
+
+        }
     }
 
     private void inicializePositions(Enumdata.MissionType missionType)
@@ -150,6 +172,7 @@ public class District : MonoBehaviour {
             default: break;
                 
         }
+        GameMngr.Instance.GetDataDistric()[IdDistrict].MaxAgents = maxPutPositions;
     }
 
     private void OnTriggerEnter(Collider other)
