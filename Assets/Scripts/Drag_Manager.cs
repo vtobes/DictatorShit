@@ -44,12 +44,13 @@ public class Drag_Manager : MonoBehaviour {
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, 8000))
             {
+                if (hit.transform.gameObject.tag == "Movable") 
                 _ObjectDragged = hit.transform.gameObject;
 
             }
 
-            if(_ObjectDragged != null && _ObjectDragged.tag == "Movable")
-                _ObjectDragged.transform.position = ray.origin + new Vector3(0, 0, 5);
+            if(_ObjectDragged != null )
+                _ObjectDragged.transform.position = ray.origin + new Vector3(0, 0,_ObjectDragged.transform.position.z - ray.origin.z);
 
         }
         else
