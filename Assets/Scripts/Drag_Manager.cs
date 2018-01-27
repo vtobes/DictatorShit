@@ -63,7 +63,7 @@ public class Drag_Manager : MonoBehaviour {
     private void MovePositionObjectDraggedToMap()
     {
         Map_manager map = GetComponent<Map_manager>();
-        if ((_ObjectDragged != null) && (map.CurrectMap!=null))
+        if ((_ObjectDragged != null) && (map.CurrentMap!=null))
         {
             //checkear si puedes añadir tropas
             
