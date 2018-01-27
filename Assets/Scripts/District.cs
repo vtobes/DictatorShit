@@ -12,6 +12,10 @@ public class District : MonoBehaviour {
     public Enumdata.Influence influence;
     public Enumdata.MissionType missionType;
 
+    public GameObject highShade;
+    public GameObject midShade;
+    public GameObject lowShade;
+
     public GameObject[] attachPositions;
     public GameObject[] AttachPositions
     {

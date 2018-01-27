@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+
 public class Enumdata : MonoBehaviour {
 
     public enum AgentType
@@ -21,7 +22,7 @@ public class Enumdata : MonoBehaviour {
     }
     // Use this for initialization
     void Start () {
-		
+
 	}
 	
 	// Update is called once per frame

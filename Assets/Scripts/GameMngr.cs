@@ -4,6 +4,39 @@ using System.Collections;
 
 public class GameMngr : MonoBehaviour
 {
+    private int totalPopulation;
+
+    public int TotalPopulation
+    {
+        get
+        {
+            return totalPopulation;
+        }
+
+        set
+        {
+            totalPopulation = value;
+        }
+    }
+
+    private int afiliateNumber;
+
+    public int AfiliateNumber
+    {
+        get
+        {
+            return afiliateNumber;
+        }
+
+        set
+        {
+            afiliateNumber = value;
+        }
+    }
+
+
+
+
     private static GameMngr game_instance;
 
     //Variables
