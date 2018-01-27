@@ -52,6 +52,45 @@ public class District : MonoBehaviour {
         }
     }
 
+    public int SpeecherCount
+    {
+        get
+        {
+            return speecherCount;
+        }
+
+        set
+        {
+            speecherCount = value;
+        }
+    }
+
+    public int HackerCount
+    {
+        get
+        {
+            return hackerCount;
+        }
+
+        set
+        {
+            hackerCount = value;
+        }
+    }
+
+    public int SpyCount
+    {
+        get
+        {
+            return spyCount;
+        }
+
+        set
+        {
+            spyCount = value;
+        }
+    }
+
     int speecherCount;
     int hackerCount;
     int spyCount;
@@ -61,9 +100,9 @@ public class District : MonoBehaviour {
         MaxPutPositions = 0;
         GameObject gameManager = GameObject.Find("GameManager");
         mapManager = gameManager.GetComponent<Map_manager>();
-        speecherCount = 0;
-        hackerCount = 0;
-        spyCount = 0;
+        SpeecherCount = 0;
+        HackerCount = 0;
+        SpyCount = 0;
 
         inicializePositions(missionType);
     }
@@ -72,11 +111,11 @@ public class District : MonoBehaviour {
 	void Update () {
 
         Debug.Log("Numero de Oradores:");
-        Debug.Log(speecherCount);
+        Debug.Log(SpeecherCount);
         Debug.Log("Numero de Hackers:");
-        Debug.Log(hackerCount);
+        Debug.Log(HackerCount);
         Debug.Log("Numero de Espias:");
-        Debug.Log(spyCount);
+        Debug.Log(SpyCount);
     }
 
     private void inicializePositions(Enumdata.MissionType missionType)
@@ -129,15 +168,15 @@ public class District : MonoBehaviour {
         switch (ai.agenttype)
         {
             case Enumdata.AgentType.hacker:
-                hackerCount++;
+                HackerCount++;
                 break;
 
             case Enumdata.AgentType.speecher:
-                speecherCount++;
+                SpeecherCount++;
                 break;
 
             case Enumdata.AgentType.spy:
-                spyCount++;
+                SpyCount++;
                 break;
         }
 
