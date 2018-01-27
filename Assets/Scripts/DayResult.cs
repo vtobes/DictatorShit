@@ -14,7 +14,7 @@ public class DayResult : MonoBehaviour {
 		
 	}
 
-    public void Exito()
+    public void CheckSuccess()
     {
         
 
@@ -82,6 +82,7 @@ public class DayResult : MonoBehaviour {
                 if(result <= Ddistrict.CurrectSuccess)
                 {
                     //vistoriaaa
+                    Success();
                 }
                 else
                 {
@@ -98,5 +99,13 @@ public class DayResult : MonoBehaviour {
         }
     
        
+    }
+
+
+    public void Success()
+    {
+        if()
+        float troopBoost = Random.Range(0.0f, 100.0f);
+        GameMngr.Instance.MaxTroops
     }
 }
