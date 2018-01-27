@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DayResult : MonoBehaviour {
-    
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    // Use this for initialization
+    void Start() {
+
+    }
+
+    // Update is called once per frame
+    void Update() {
+
+    }
 
     public void CheckSuccess()
     {
-        
+
 
         float exito_total = 100;
 
@@ -44,8 +44,8 @@ public class DayResult : MonoBehaviour {
                         break;
                 }
                 // calculo de colocacion correcta
-                float bonus_colocacion_correcta, colocados;
-                int max_agents = Ddistrict.MaxAgents;
+                float bonus_colocacion_correcta, colocados=0;
+                float max_agents = Ddistrict.MaxAgents;
 
                 switch (GameMngr.Instance.GetDataDistric()[i].Mission)
                 {
@@ -62,16 +62,16 @@ public class DayResult : MonoBehaviour {
                         colocados = Ddistrict.speecher / max_agents;
 
                         break;
-                    default:
-                        colocados = 0;
-                        break;
+                    //default:
+                    //    colocados = 0;
+                    //    break;
                 }
 
                 bonus_colocacion_correcta = fallo_base - (colocados * fallo_base);
 
                 float segundafase = fallo_base * (1 - ((Ddistrict.speecher + Ddistrict.spy + Ddistrict.hacker) / max_agents));
 
-                float exito = exito_total - bonus_colocacion_correcta - segundafase;            
+                float exito = exito_total - bonus_colocacion_correcta - segundafase;
                 Ddistrict.CurrectSuccess = exito;
 
                 if (Ddistrict.infiltrado)
@@ -79,14 +79,15 @@ public class DayResult : MonoBehaviour {
 
                 //calcular si hay victoria
                 float result = Random.Range(0.0f, 100.0f);
-                if(result <= Ddistrict.CurrectSuccess)
+                if (result <= Ddistrict.CurrectSuccess)
                 {
                     //vistoriaaa
-                   // Success();
+                    Success(i);
                 }
                 else
                 {
                     //derrota
+                    Defeat(i);
                 }
 
 
@@ -97,18 +98,52 @@ public class DayResult : MonoBehaviour {
 
 
         }
-    
-       
+        GameMngr.Instance.GetDataDistric();
+        Debug.Log("holaaaaaaa");
+
     }
-    /*
-    public void Success()
+
+
+
+    public void Success(int index)
     {
-        if (true)
+        if (GameMngr.Instance.GetDataDistric()[index].Mission == Enumdata.MissionType.propaganda ||
+            GameMngr.Instance.GetDataDistric()[index].Mission == Enumdata.MissionType.rescue)
+        {
+            GameMngr.Instance.GetDataDistric()[index].infiltrado = false;
+
             float troopBoost = Random.Range(0.0f, 100.0f);
-        GameMngr.Instance.MaxTroops;
+            if(troopBoost <= 20.0f)
+            {
+                GameMngr.Instance.MaxTroops++;
+            }
+        }
+        else
+        {
+            GameMngr.Instance.GetDataDistric()[index].infiltrado = true;
+        }
+        GameMngr.Instance.GetDataDistric()[index].victories++;
+        GameMngr.Instance.TotalPopulation += 1000;
+        if(GameMngr.Instance.GetDataDistric()[index].victories % 3 == 0)
+        {
+            if(GameMngr.Instance.GetDataDistric()[index].Difficult != Enumdata.Influence.easy)
+            {
+                GameMngr.Instance.GetDataDistric()[index].Difficult--;
+            }
+        }
     }
-    public void Defeat()
+    public void Defeat(int i)
     {
-    
-    }*/
+        DataDistrict Ddistrict = GameMngr.Instance.GetDataDistric()[i];
+        //eliminar 1 tropa del general
+        GameMngr.Instance.MaxTroops--;
+        //Regresar las tropas restantes
+
+        //aumenta derrota
+        Ddistrict.defeats++;
+        //- 500 poblacion
+        GameMngr.Instance.AfiliateNumber -= 500;
+        // añadi penalizacion de tres derrotas?
+
+    }
 }
