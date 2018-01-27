@@ -13,7 +13,7 @@ public class infomation_point : MonoBehaviour {
 	void Update () {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
    
-        Debug.Log("Position: "+ ray.direction.ToString());
+        //Debug.Log("Position: "+ ray.direction.ToString());
 
     }
 }

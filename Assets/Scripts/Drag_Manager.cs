@@ -44,7 +44,11 @@ public class Drag_Manager : MonoBehaviour {
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, 8000))
             {
-                _ObjectDragged = hit.transform.gameObject;
+                if(hit.transform.gameObject.tag == "Movable")
+                {
+                    _ObjectDragged = hit.transform.gameObject;
+                }
+                
 
             }
 
