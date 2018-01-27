@@ -14,7 +14,7 @@ public class DayResult : MonoBehaviour {
 		
 	}
 
-    public void Exito()
+    public void CheckSuccess()
     {
         
 
@@ -98,5 +98,10 @@ public class DayResult : MonoBehaviour {
         }
     
        
+    }
+
+    public void Defeat()
+    {
+
     }
 }
