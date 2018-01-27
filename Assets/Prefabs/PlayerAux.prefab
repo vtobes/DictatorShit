@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212496899383515182}
   - component: {fileID: 95430181709765470}
   - component: {fileID: 114995759758382324}
+  - component: {fileID: 111149278329120104}
   m_Layer: 0
   m_Name: PlayerAux
   m_TagString: Untagged
@@ -59,6 +60,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!111 &111149278329120104
+Animation:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1712610162599590}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: ca4a20b678eecf24e851bcf334b9fdaa, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &114995759758382324
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -70,6 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e0029b3340a9b24bb56eaee4953a32d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  idleSprite: {fileID: 0}
 --- !u!212 &212496899383515182
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -104,7 +120,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 82b6adc0bb6ae734d93f3f46b554ec65, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6692433fe1250f140a0f2582059d9fad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

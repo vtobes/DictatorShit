@@ -11,12 +11,15 @@ public class Navigating : MonoBehaviour {
     bool alreadyTurned;
     Vector3 auxPos;
     Ray ray;
+    public Sprite idleSprite;
+    Animator anim;
 
     // Use this for initialization
     void Start () {
         newPosition = transform.position;
         isMoving = false;
         alreadyTurned = false;
+        anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -57,12 +60,14 @@ public class Navigating : MonoBehaviour {
 
     void Move()
     {
+        anim.SetBool("Moving", true);
         transform.position = Vector3.MoveTowards(transform.position, newPosition, 5.0f * Time.deltaTime);
         //auxPos = ray.origin + new Vector3(0, 0, transform.position.z - ray.origin.z);
         //rb.MovePosition(auxPos * 5.0f * Time.deltaTime);
         if(transform.position == newPosition)
         {
             isMoving = false;
+            anim.SetBool("Moving", false);
         }
     }
 }
