@@ -82,7 +82,7 @@ public class DayResult : MonoBehaviour {
                 if(result <= Ddistrict.CurrectSuccess)
                 {
                     //vistoriaaa
-                    Success();
+                   // Success();
                 }
                 else
                 {
@@ -100,18 +100,15 @@ public class DayResult : MonoBehaviour {
     
        
     }
-
-<<<<<<< HEAD
-
+    /*
     public void Success()
     {
-        if()
-        float troopBoost = Random.Range(0.0f, 100.0f);
-        GameMngr.Instance.MaxTroops
-=======
+        if (true)
+            float troopBoost = Random.Range(0.0f, 100.0f);
+        GameMngr.Instance.MaxTroops;
+    }
     public void Defeat()
     {
-
->>>>>>> origin/master
-    }
+    
+    }*/
 }
