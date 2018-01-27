@@ -109,4 +109,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0aa23abae4310c4089bdd61d3d64df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 0}
+  objectToSpawn: {fileID: 1120782504196864, guid: b9576afdd01a7a24cb736ec9f30758e0,
+    type: 2}

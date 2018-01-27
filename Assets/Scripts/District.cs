@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class District : MonoBehaviour {
 
-    public int maxPutPositions;
-    
-    
+    private int maxPutPositions;
+
+
     Map_manager mapManager;
     public Enumdata.Influence influence;
     public Enumdata.MissionType missionType;
@@ -39,6 +39,18 @@ public class District : MonoBehaviour {
         }
     }
 
+    public int MaxPutPositions
+    {
+        get
+        {
+            return maxPutPositions;
+        }
+
+        set
+        {
+            maxPutPositions = value;
+        }
+    }
 
     int speecherCount;
     int hackerCount;
@@ -46,12 +58,14 @@ public class District : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-        maxPutPositions = 0;
+        MaxPutPositions = 0;
         GameObject gameManager = GameObject.Find("GameManager");
         mapManager = gameManager.GetComponent<Map_manager>();
         speecherCount = 0;
         hackerCount = 0;
         spyCount = 0;
+
+        inicializePositions(missionType);
     }
 	
 	// Update is called once per frame
@@ -65,7 +79,36 @@ public class District : MonoBehaviour {
         Debug.Log(spyCount);
     }
 
+    private void inicializePositions(Enumdata.MissionType missionType)
+    {
+        switch (missionType)
+        {
+            case Enumdata.MissionType.inflitration:
+                attachPositions = new GameObject[1];
+               
+               
+               
+                attachPositions[0] = Instantiate(new GameObject(), new Vector3(2.7f, 0, -2.7f), Quaternion.identity) ;
+                break;
 
+            case Enumdata.MissionType.propaganda:
+                attachPositions = new GameObject[3];
+                attachPositions[0]= Instantiate(new GameObject(), new Vector3(2.7f, 0, -2.7f), Quaternion.identity); 
+                attachPositions[1] = Instantiate(new GameObject(), new Vector3(-2.52f, 0, -2.91f), Quaternion.identity); 
+                attachPositions[2] = Instantiate(new GameObject(), new Vector3(2.48f, 0, 2.03f), Quaternion.identity); 
+                break;
+
+            case Enumdata.MissionType.rescue:
+                attachPositions = new GameObject[3];
+                attachPositions[0] = Instantiate(new GameObject(), new Vector3(2.7f, 0, -2.7f), Quaternion.identity);
+                attachPositions[1] = Instantiate(new GameObject(), new Vector3(-2.52f, 0, -2.91f), Quaternion.identity);
+                attachPositions[2] = Instantiate(new GameObject(), new Vector3(2.48f, 0, 2.03f), Quaternion.identity);
+                break;
+
+            default: break;
+                
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
