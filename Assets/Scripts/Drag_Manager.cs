@@ -98,6 +98,10 @@ public class Drag_Manager : MonoBehaviour {
 
                     GameMngr.Instance.MaxTroops--;
                 }
+                else
+                {
+                    _ObjectDragged.SetActive(false);
+                }
 
                 //TODO: destruir tropa
             }
