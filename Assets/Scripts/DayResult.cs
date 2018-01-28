@@ -45,7 +45,7 @@ public class DayResult : MonoBehaviour {
                         break;
                 }
                 // calculo de colocacion correcta
-                float bonus_colocacion_correcta, colocados=0;
+                float bonus_colocacion_correcta, colocados = 0;
                 float max_agents = Ddistrict.MaxAgents;
 
                 switch (GameMngr.Instance.GetDataDistric()[i].Mission)
@@ -63,9 +63,9 @@ public class DayResult : MonoBehaviour {
                         colocados = Ddistrict.speecher / max_agents;
 
                         break;
-                    //default:
-                    //    colocados = 0;
-                    //    break;
+                        //default:
+                        //    colocados = 0;
+                        //    break;
                 }
 
                 bonus_colocacion_correcta = fallo_base - (colocados * fallo_base);
@@ -114,7 +114,7 @@ public class DayResult : MonoBehaviour {
             GameMngr.Instance.GetDataDistric()[index].infiltrado = false;
 
             float troopBoost = Random.Range(0.0f, 100.0f);
-            if(troopBoost <= 20.0f)
+            if (troopBoost <= 20.0f)
             {
                 GameMngr.Instance.MaxTroops++;
             }
@@ -125,9 +125,9 @@ public class DayResult : MonoBehaviour {
         }
         GameMngr.Instance.GetDataDistric()[index].victories++;
         GameMngr.Instance.AfiliateNumber += 1000;
-        if(GameMngr.Instance.GetDataDistric()[index].victories % 3 == 0)
+        if (GameMngr.Instance.GetDataDistric()[index].victories % 3 == 0)
         {
-            if(GameMngr.Instance.GetDataDistric()[index].Difficult != Enumdata.Influence.easy)
+            if (GameMngr.Instance.GetDataDistric()[index].Difficult != Enumdata.Influence.easy)
             {
                 GameMngr.Instance.GetDataDistric()[index].Difficult--;
             }
@@ -150,7 +150,7 @@ public class DayResult : MonoBehaviour {
 
     public void UpdateDistrict()
     {
-        for (int i=0; i < DistrictList.Length; i++)
+        for (int i = 0; i < DistrictList.Length; i++)
         {
             //reseteamos y actualizamos el district
             DistrictList[i].GetComponent<District>().SpeecherCount = 0;
@@ -158,9 +158,16 @@ public class DayResult : MonoBehaviour {
             DistrictList[i].GetComponent<District>().HackerCount = 0;
             // dificultad
             DistrictList[i].GetComponent<District>().influence = GameMngr.Instance.GetDataDistric()[DistrictList[i].GetComponent<District>().IdDistrict].Difficult;
-           // DistrictList[i].GetComponent<District>().missionType = Random.RandomRange(Enumdata.MissionType.rescue, Enumdata.MissionType.inflitration);
-            public Enumdata.MissionType Mission = Enumdata.MissionType.rescue;
+            DistrictList[i].GetComponent<District>().missionType = (Enumdata.MissionType)Random.Range(0, 2);
 
-}
+        }
+
+        // eliminar piezas colocadas
+        GameObject[] respawns = GameObject.FindGameObjectsWithTag("Colocadas");
+
+        foreach (GameObject respawn in respawns)
+        {
+            DestroyObject(respawn);
+        }
     }
 }
