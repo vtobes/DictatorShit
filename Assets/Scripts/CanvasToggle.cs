@@ -11,11 +11,11 @@ public class CanvasToggle : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            gameObject.SetActive(false);
+        }
 	}
 
-    void OnMouseDown()
-    {
-        gameObject.SetActive(false);
-    }
+    
 }
