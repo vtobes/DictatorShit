@@ -91,7 +91,8 @@ public class DayResult : MonoBehaviour {
                     Defeat(i);
                 }
 
-
+                //Devolver tropas
+                GameMngr.Instance.MaxTroops += GameMngr.Instance.GetDataDistric()[i].speecher + GameMngr.Instance.GetDataDistric()[i].spy + GameMngr.Instance.GetDataDistric()[i].hacker;
 
             }
             else
@@ -139,6 +140,7 @@ public class DayResult : MonoBehaviour {
         }
         //Auxiliar data for results
         GameMngr.Instance.SuccessMissions++;
+       
 
     }
     public void Defeat(int i)

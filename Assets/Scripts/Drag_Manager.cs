@@ -95,6 +95,8 @@ public class Drag_Manager : MonoBehaviour {
                     DataDistrict Dddistrict = GameMngr.Instance.GetDataDistric()[map.CurrentMap.GetComponent<District>().IdDistrict];
 
                     Debug.Log("numero de agentes: "+ GameMngr.Instance.GetDataDistric()[map.CurrentMap.GetComponent<District>().IdDistrict]);
+
+                    GameMngr.Instance.MaxTroops--;
                 }
 
                 //TODO: destruir tropa
