@@ -22,6 +22,6 @@ public class ButtonActions : MonoBehaviour {
 
     public void LoadGame()
     {
-        SceneManager.LoadScene("MapScene");
+        SceneManager.LoadScene("MapRoom");
     }
 }
