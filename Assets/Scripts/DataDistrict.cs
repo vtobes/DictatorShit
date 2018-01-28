@@ -10,7 +10,7 @@ public class DataDistrict {
     public int victories=0;
     public int defeats= 0;
     public bool infiltrado = false;
-    public Enumdata.Influence Difficult = Enumdata.Influence.easy;
+    public Enumdata.Influence Difficult = Enumdata.Influence.hard;
 
     public float CurrectSuccess = 0.00f;
     public Enumdata.MissionType Mission = Enumdata.MissionType.rescue;
