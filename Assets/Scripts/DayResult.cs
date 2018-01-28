@@ -146,11 +146,11 @@ public class DayResult : MonoBehaviour {
         GameMngr.Instance.SuccessMissions++;
 
         // procesar victoria
-        //if(GameMngr.Instance.AfiliateNumber > ((GameMngr.Instance.TotalPopulation / 2) + 1))
-        //{
-        //    // carcar canas victoria
-        //    Panel_victoria.SetActive(true);
-        //}
+        if (GameMngr.Instance.AfiliateNumber > ((GameMngr.Instance.TotalPopulation / 2) + 1))
+        {
+            // carcar canas victoria
+            Panel_victoria.SetActive(true);
+        }
 
 
 

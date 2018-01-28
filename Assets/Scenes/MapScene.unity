@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.4964127, b: 0.57481724, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1327,7 +1327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IdDistrict: 5
-  influence: 1
+  influence: 2
   missionType: 1
   rescueMission: {fileID: 1768950396}
   propagandaMission: {fileID: 1368221709}
@@ -3937,7 +3937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IdDistrict: 9
-  influence: 0
+  influence: 2
   missionType: 1
   rescueMission: {fileID: 1827558879}
   propagandaMission: {fileID: 457836285}
@@ -5520,7 +5520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IdDistrict: 6
-  influence: 1
+  influence: 2
   missionType: 1
   rescueMission: {fileID: 2078358779}
   propagandaMission: {fileID: 743609061}
@@ -9671,7 +9671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IdDistrict: 7
-  influence: 0
+  influence: 2
   missionType: 1
   rescueMission: {fileID: 1291526443}
   propagandaMission: {fileID: 948825399}
@@ -12398,6 +12398,11 @@ Prefab:
       propertyPath: infiltrateMission
       value: 
       objectReference: {fileID: 954330146}
+    - target: {fileID: 114367441622664864, guid: 70e2ddf703b166842a2907b1bed12551,
+        type: 2}
+      propertyPath: influence
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 70e2ddf703b166842a2907b1bed12551, type: 2}
   m_IsPrefabParent: 0
@@ -13552,7 +13557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IdDistrict: 9
-  influence: 0
+  influence: 2
   missionType: 1
   rescueMission: {fileID: 1991148543}
   propagandaMission: {fileID: 1033379385}
@@ -13935,7 +13940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IdDistrict: 3
-  influence: 1
+  influence: 2
   missionType: 1
   rescueMission: {fileID: 1526178424}
   propagandaMission: {fileID: 352359209}
@@ -14068,7 +14073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IdDistrict: 8
-  influence: 0
+  influence: 2
   missionType: 1
   rescueMission: {fileID: 1319915902}
   propagandaMission: {fileID: 859367236}
@@ -14491,7 +14496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IdDistrict: 1
-  influence: 0
+  influence: 2
   missionType: 1
   rescueMission: {fileID: 1135529129}
   propagandaMission: {fileID: 2090928533}
@@ -15039,7 +15044,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IdDistrict: 4
-  influence: 1
+  influence: 2
   missionType: 1
   rescueMission: {fileID: 312161747}
   propagandaMission: {fileID: 686615181}
