@@ -173,7 +173,7 @@ public class DayResult : MonoBehaviour {
             DistrictList[i].GetComponent<District>().SpyCount = 0;
             DistrictList[i].GetComponent<District>().HackerCount = 0;
             // dificultad
-            DistrictList[i].GetComponent<District>().influence = GameMngr.Instance.GetDataDistric()[DistrictList[i].GetComponent<District>().IdDistrict].Difficult;
+            
             GameMngr.Instance.GetDataDistric()[i].Difficult = DistrictList[i].GetComponent<District>().influence;
             DistrictList[i].GetComponent<District>().missionType = (Enumdata.MissionType)Random.Range(0, 2);
             GameMngr.Instance.GetDataDistric()[i].Mission = DistrictList[i].GetComponent<District>().missionType;
