@@ -19,14 +19,19 @@ public class GameState : MonoBehaviour {
         //GameMngr.Instance.setnumAfiliados(numAfiliados);
         if (!GameMngr.Instance.getAlreadyInitialized())
         {
-            GameMngr.Instance.AfiliateNumber = numAfiliados;
-            GameMngr.Instance.TotalPopulation= numPoblacion;
-            GameMngr.Instance.setBasedifficulty(Basedifficulty);
-            GameMngr.Instance.setMaxTroops(maxTroops);
-            GameMngr.Instance.setAlreadyInitialized(true);
+            InitValues();
         }
     }
 	
+
+    void InitValues()
+    {
+        GameMngr.Instance.AfiliateNumber = numAfiliados;
+        GameMngr.Instance.TotalPopulation = numPoblacion;
+        GameMngr.Instance.setBasedifficulty(Basedifficulty);
+        GameMngr.Instance.setMaxTroops(maxTroops);
+        GameMngr.Instance.setAlreadyInitialized(true);
+    }
 	// Update is called once per frame
 	void Update () {
 		

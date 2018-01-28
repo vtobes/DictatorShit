@@ -194,6 +194,7 @@ public class DayResult : MonoBehaviour {
             DistrictList[i].GetComponent<District>().missionType = (Enumdata.MissionType)Random.Range(0, 2);
             GameMngr.Instance.GetDataDistric()[i].Mission = DistrictList[i].GetComponent<District>().missionType;
             DistrictList[i].GetComponent<District>().inicializePositions(DistrictList[i].GetComponent<District>().missionType);
+            DistrictList[i].GetComponent<District>().CurrentPosition = 0;
         }
 
         // eliminar piezas colocadas
