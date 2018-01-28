@@ -6261,6 +6261,7 @@ MonoBehaviour:
   - {fileID: 1813413821}
   - {fileID: 502425447}
   Panel_victoria: {fileID: 1655563121}
+  Panel_derrrota: {fileID: 1062010569}
 --- !u!1 &1082554268
 GameObject:
   m_ObjectHideFlags: 0
@@ -9863,7 +9864,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Victoria
+  m_Text: 'Derrota
 
 '
 --- !u!222 &1606332081
