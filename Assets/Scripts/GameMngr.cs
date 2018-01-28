@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using System.Collections;
 
@@ -241,15 +242,7 @@ public class GameMngr : MonoBehaviour
         numAfiliados = num;
     }
 
-    public int getnumPoblacion()
-    {
-        return numPoblacion;
-    }
 
-    public void setnumPoblacion(int num)
-    {
-        numPoblacion = num;
-    }
 
     public int getBasedifficulty()
     {

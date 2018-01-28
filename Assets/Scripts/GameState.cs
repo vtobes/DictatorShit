@@ -20,7 +20,7 @@ public class GameState : MonoBehaviour {
         if (!GameMngr.Instance.getAlreadyInitialized())
         {
             GameMngr.Instance.AfiliateNumber = numAfiliados;
-            GameMngr.Instance.setnumPoblacion(numPoblacion);
+            GameMngr.Instance.TotalPopulation= numPoblacion;
             GameMngr.Instance.setBasedifficulty(Basedifficulty);
             GameMngr.Instance.setMaxTroops(maxTroops);
             GameMngr.Instance.setAlreadyInitialized(true);
