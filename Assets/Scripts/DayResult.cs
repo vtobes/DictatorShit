@@ -159,7 +159,7 @@ public class DayResult : MonoBehaviour {
             // dificultad
             DistrictList[i].GetComponent<District>().influence = GameMngr.Instance.GetDataDistric()[DistrictList[i].GetComponent<District>().IdDistrict].Difficult;
            // DistrictList[i].GetComponent<District>().missionType = Random.RandomRange(Enumdata.MissionType.rescue, Enumdata.MissionType.inflitration);
-            public Enumdata.MissionType Mission = Enumdata.MissionType.rescue;
+            Enumdata.MissionType Mission = Enumdata.MissionType.rescue;
 
 }
     }
