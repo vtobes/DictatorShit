@@ -50,7 +50,7 @@ public class Map_manager : MonoBehaviour {
             Debug.Log(CurrentMap.name);
         }
 
-        affText.text = GameMngr.Instance.AfiliateNumber.ToString();
+        affText.text = GameMngr.Instance.AfiliateNumber.ToString()+ " / " + GameMngr.Instance.TotalPopulation.ToString();
         troopsText.text = GameMngr.Instance.MaxTroops.ToString();
     }
 }

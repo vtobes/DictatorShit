@@ -5,6 +5,9 @@ using UnityEngine;
 public class DayResult : MonoBehaviour {
 
     public GameObject[] DistrictList;
+    private int num_defeats= 0;
+    public GameObject Panel_victoria;
+    public GameObject Panel_derrrota;
     // Use this for initialization
     void Start() {
 
@@ -131,6 +134,7 @@ public class DayResult : MonoBehaviour {
         GameMngr.Instance.PreviousAfiliateNumber = GameMngr.Instance.AfiliateNumber;
 
         GameMngr.Instance.AfiliateNumber += 1000;
+      
         if (GameMngr.Instance.GetDataDistric()[index].victories % 3 == 0)
         {
             if (GameMngr.Instance.GetDataDistric()[index].Difficult != Enumdata.Influence.easy)
@@ -140,7 +144,15 @@ public class DayResult : MonoBehaviour {
         }
         //Auxiliar data for results
         GameMngr.Instance.SuccessMissions++;
-       
+
+        // procesar victoria
+        if(GameMngr.Instance.AfiliateNumber > ((GameMngr.Instance.TotalPopulation / 2) + 1))
+        {
+            // carcar canas victoria
+            Panel_victoria.SetActive(true);
+        }
+
+
 
     }
     public void Defeat(int i)
@@ -160,7 +172,12 @@ public class DayResult : MonoBehaviour {
         GameMngr.Instance.AfiliateNumber -= 500;
         //Auxiliar data for results
         GameMngr.Instance.FailedMissions++;
-        // añadi penalizacion de tres derrotas?
+
+        if (num_defeats > 25)
+        {
+            Panel_derrrota.SetActive(true);
+        }
+        
 
     }
 
