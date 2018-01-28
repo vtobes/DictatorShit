@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
     void Move()
     {
         anim.SetBool("isWalking", true);
-        transform.position = Vector3.MoveTowards(transform.position, newPosition, 5.0f * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, newPosition, 1.5f * Time.deltaTime);
         //auxPos = ray.origin + new Vector3(0, 0, transform.position.z - ray.origin.z);
         //rb.MovePosition(auxPos * 5.0f * Time.deltaTime);
         if (transform.position == newPosition)
