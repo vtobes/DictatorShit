@@ -42,6 +42,9 @@ public class PlayerController : MonoBehaviour
     {
         Plane plane = new Plane(Vector3.forward, transform.position);
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        Vector3 flipper = new Vector3(-1, 1, 1);
+
         float point;
         if (plane.Raycast(ray, out point))
         {
@@ -50,12 +53,12 @@ public class PlayerController : MonoBehaviour
         }
         if (newPosition.x > transform.position.x && alreadyTurned == false)
         {
-            transform.Rotate(0.0f, 180.0f, 0.0f);
+            transform.localScale= Vector3.Scale(transform.localScale, flipper);
             alreadyTurned = true;
         }
         else if (newPosition.x < transform.position.x && alreadyTurned == true)
         {
-            transform.Rotate(0.0f, 180.0f, 0.0f);
+            transform.localScale = Vector3.Scale(transform.localScale, flipper);
             alreadyTurned = false;
         }
         isMoving = true;
