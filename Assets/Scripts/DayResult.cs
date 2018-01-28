@@ -174,8 +174,9 @@ public class DayResult : MonoBehaviour {
             DistrictList[i].GetComponent<District>().HackerCount = 0;
             // dificultad
             DistrictList[i].GetComponent<District>().influence = GameMngr.Instance.GetDataDistric()[DistrictList[i].GetComponent<District>().IdDistrict].Difficult;
+            GameMngr.Instance.GetDataDistric()[i].Difficult = DistrictList[i].GetComponent<District>().influence;
             DistrictList[i].GetComponent<District>().missionType = (Enumdata.MissionType)Random.Range(0, 2);
-
+            GameMngr.Instance.GetDataDistric()[i].Mission = DistrictList[i].GetComponent<District>().missionType;
         }
 
         // eliminar piezas colocadas
@@ -184,6 +185,17 @@ public class DayResult : MonoBehaviour {
         foreach (GameObject respawn in respawns)
         {
             DestroyObject(respawn);
+        }
+    }
+
+    public void ResetDataDistric()
+    {
+        for (int i = 0; i < GameMngr.Instance.GetDataDistric().Length; i++)
+        {
+            GameMngr.Instance.GetDataDistric()[i].speecher = 0;
+            GameMngr.Instance.GetDataDistric()[i].spy = 0;
+            GameMngr.Instance.GetDataDistric()[i].hacker = 0;
+
         }
     }
 }
