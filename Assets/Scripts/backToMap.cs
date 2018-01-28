@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class BackScene : MonoBehaviour {
+public class backToMap : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -12,11 +12,10 @@ public class BackScene : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
-
-    public void LoadScene()
+     
+    }
+    public void loadscene()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("MapScene");
     }
 }

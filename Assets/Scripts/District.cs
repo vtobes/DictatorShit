@@ -114,8 +114,16 @@ public class District : MonoBehaviour {
         HackerCount = 0;
         SpyCount = 0;
 
+        if (GameMngr.Instance.getAlreadyInitialized())
+        {
+            influence = GameMngr.Instance.GetDataDistric()[IdDistrict].Difficult;
+            missionType = GameMngr.Instance.GetDataDistric()[IdDistrict].Mission;
+        }
+
+
         inicializePositions(missionType);
 
+       
         
     }
 	

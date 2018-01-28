@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 114601825449999320}
   - component: {fileID: 114448156635682978}
   - component: {fileID: 114584257144309220}
+  - component: {fileID: 114544632509809158}
   m_Layer: 5
   m_Name: CanvasResult
   m_TagString: Untagged
@@ -948,7 +949,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'District Status:'
+  m_Text: 'Districts Influence:'
 --- !u!114 &114281869627007086
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1083,8 +1084,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114544632509809158}
         m_MethodName: ResetDataValues
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: ResetDataDistric
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1360,6 +1372,17 @@ MonoBehaviour:
   m_Text: 'Amount
 
 '
+--- !u!114 &114544632509809158
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1287731297342398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e13aee0a5dc7b34a807e8fc2eff291c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114547508080478420
 MonoBehaviour:
   m_ObjectHideFlags: 1
