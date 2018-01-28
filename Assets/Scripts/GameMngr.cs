@@ -5,7 +5,50 @@ using System.Collections;
 
 public class GameMngr : MonoBehaviour
 {
-    
+    private int previousAffiliateNumber;
+
+    public int PreviousAffiliateNumber
+    {
+        get
+        {
+            return previousAffiliateNumber;
+        }
+
+        set
+        {
+            previousAffiliateNumber = value;
+        }
+    }
+
+    private int agentsGained;
+
+    public int AgentsGained
+    {
+        get
+        {
+            return agentsGained;
+        }
+
+        set
+        {
+            agentsGained = value;
+        }
+    }
+
+    private int agentsLost;
+
+    public int AgentsLost
+    {
+        get
+        {
+            return agentsLost;
+        }
+        set
+        {
+            agentsLost = value;
+        }
+    }
+
 
     private int successMissions;
 
@@ -141,6 +184,7 @@ public class GameMngr : MonoBehaviour
         }
     }
 
+    
 
     public string getNextSceneToLoad()
     {
