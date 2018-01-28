@@ -45,7 +45,7 @@ public class DayResult : MonoBehaviour {
                         break;
                 }
                 // calculo de colocacion correcta
-                float bonus_colocacion_correcta, colocados=0;
+                float bonus_colocacion_correcta, colocados = 0;
                 float max_agents = Ddistrict.MaxAgents;
 
                 switch (GameMngr.Instance.GetDataDistric()[i].Mission)
@@ -63,9 +63,9 @@ public class DayResult : MonoBehaviour {
                         colocados = Ddistrict.speecher / max_agents;
 
                         break;
-                    //default:
-                    //    colocados = 0;
-                    //    break;
+                        //default:
+                        //    colocados = 0;
+                        //    break;
                 }
 
                 bonus_colocacion_correcta = fallo_base - (colocados * fallo_base);
@@ -100,7 +100,7 @@ public class DayResult : MonoBehaviour {
 
         }
         GameMngr.Instance.GetDataDistric();
-        Debug.Log("holaaaaaaa");
+
 
     }
 
@@ -114,9 +114,11 @@ public class DayResult : MonoBehaviour {
             GameMngr.Instance.GetDataDistric()[index].infiltrado = false;
 
             float troopBoost = Random.Range(0.0f, 100.0f);
-            if(troopBoost <= 20.0f)
+            if (troopBoost <= 20.0f)
             {
                 GameMngr.Instance.MaxTroops++;
+                //Auxiliar data for results
+                GameMngr.Instance.AgentsGained++;
             }
         }
         else
@@ -124,33 +126,46 @@ public class DayResult : MonoBehaviour {
             GameMngr.Instance.GetDataDistric()[index].infiltrado = true;
         }
         GameMngr.Instance.GetDataDistric()[index].victories++;
+        //Auxiliar data for results
+        GameMngr.Instance.PreviousAfiliateNumber = GameMngr.Instance.AfiliateNumber;
+
         GameMngr.Instance.AfiliateNumber += 1000;
-        if(GameMngr.Instance.GetDataDistric()[index].victories % 3 == 0)
+
+        if (GameMngr.Instance.GetDataDistric()[index].victories % 3 == 0)
         {
-            if(GameMngr.Instance.GetDataDistric()[index].Difficult != Enumdata.Influence.easy)
+            if (GameMngr.Instance.GetDataDistric()[index].Difficult != Enumdata.Influence.easy)
             {
                 GameMngr.Instance.GetDataDistric()[index].Difficult--;
             }
         }
+        //Auxiliar data for results
+        GameMngr.Instance.SuccessMissions++;
+
     }
     public void Defeat(int i)
     {
         DataDistrict Ddistrict = GameMngr.Instance.GetDataDistric()[i];
         //eliminar 1 tropa del general
         GameMngr.Instance.MaxTroops--;
+        //Auxiliar data for results
+        GameMngr.Instance.AgentsLost++;
         //Regresar las tropas restantes
         GameMngr.Instance.GetDataDistric()[i].infiltrado = false;
         //aumenta derrota
         Ddistrict.defeats++;
+        //Auxiliar data for results
+        GameMngr.Instance.PreviousAfiliateNumber = GameMngr.Instance.AfiliateNumber;
         //- 500 poblacion
         GameMngr.Instance.AfiliateNumber -= 500;
+        //Auxiliar data for results
+        GameMngr.Instance.FailedMissions++;
         // añadi penalizacion de tres derrotas?
 
     }
 
     public void UpdateDistrict()
     {
-        for (int i=0; i < DistrictList.Length; i++)
+        for (int i = 0; i < DistrictList.Length; i++)
         {
             //reseteamos y actualizamos el district
             DistrictList[i].GetComponent<District>().SpeecherCount = 0;
@@ -159,8 +174,8 @@ public class DayResult : MonoBehaviour {
             // dificultad
             DistrictList[i].GetComponent<District>().influence = GameMngr.Instance.GetDataDistric()[DistrictList[i].GetComponent<District>().IdDistrict].Difficult;
            // DistrictList[i].GetComponent<District>().missionType = Random.RandomRange(Enumdata.MissionType.rescue, Enumdata.MissionType.inflitration);
-            public Enumdata.MissionType Mission = Enumdata.MissionType.rescue;
+            Enumdata.MissionType Mission = Enumdata.MissionType.rescue;
 
-}
+        }
     }
 }
