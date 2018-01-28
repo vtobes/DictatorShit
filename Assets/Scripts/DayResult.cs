@@ -173,7 +173,7 @@ public class DayResult : MonoBehaviour {
         //Auxiliar data for results
         GameMngr.Instance.FailedMissions++;
 
-        if (num_defeats > 25)
+        if ((num_defeats > 25)|| (GameMngr.Instance.AfiliateNumber<=0))
         {
             Panel_derrrota.SetActive(true);
         }
@@ -190,7 +190,6 @@ public class DayResult : MonoBehaviour {
             DistrictList[i].GetComponent<District>().SpyCount = 0;
             DistrictList[i].GetComponent<District>().HackerCount = 0;
             // dificultad
-            
             GameMngr.Instance.GetDataDistric()[i].Difficult = DistrictList[i].GetComponent<District>().influence;
             DistrictList[i].GetComponent<District>().missionType = (Enumdata.MissionType)Random.Range(0, 2);
             GameMngr.Instance.GetDataDistric()[i].Mission = DistrictList[i].GetComponent<District>().missionType;
