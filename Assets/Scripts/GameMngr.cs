@@ -5,6 +5,10 @@ using System.Collections;
 
 public class GameMngr : MonoBehaviour
 {
+
+    
+
+
     private int previousAffiliateNumber;
 
     public int PreviousAffiliateNumber
@@ -151,7 +155,7 @@ public class GameMngr : MonoBehaviour
     private static string nextScene = "";
     private static string lastDance = "";
     private static string currentKeyScene = "015";
-
+    private static bool alreadyInitialized = false;
     private int numAfiliados = 0;
     private int numPoblacion = 0;
 
@@ -166,10 +170,11 @@ public class GameMngr : MonoBehaviour
         {
             if (game_instance == null)
             {
+                alreadyInitialized = false;
                 //For access to this GameObject must be used GameManagerObject.Instance.MethodName()...
                 GameObject gameManagerObject = new GameObject("GameManagerObject");
                 DontDestroyOnLoad(gameManagerObject);
-
+                
                 game_instance = gameManagerObject.AddComponent<GameMngr>();
                 Debug.Log("Se ha creado una instancia del GameMngr");
                 for(int i = 0; i < 10; i++)
@@ -264,5 +269,15 @@ public class GameMngr : MonoBehaviour
     public int getMaxTroops()
     {
         return maxTroops;
+    }
+
+    public void setAlreadyInitialized(bool value)
+    {
+        alreadyInitialized = value;
+    }
+
+    public bool getAlreadyInitialized()
+    {
+        return alreadyInitialized;
     }
 }

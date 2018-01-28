@@ -1,0 +1,155 @@
+fileFormatVersion: 2
+guid: 75543c334e76d5d4fa68e95a12755ae6
+timeCreated: 1517137114
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: camion01
+    100002: copiadora
+    100004: PhysCamera001
+    100006: PhysCamera001.Target
+    100008: plano_suelo
+    100010: puerta_004
+    100012: rodapie001
+    100014: rodapie002
+    100016: sala
+    100018: //RootNode
+    100020: suelo
+    100022: tuberias_02
+    400000: camion01
+    400002: copiadora
+    400004: PhysCamera001
+    400006: PhysCamera001.Target
+    400008: plano_suelo
+    400010: puerta_004
+    400012: rodapie001
+    400014: rodapie002
+    400016: sala
+    400018: //RootNode
+    400020: suelo
+    400022: tuberias_02
+    2100000: M_metal
+    2100002: 24 - Default
+    2100004: 23 - Default
+    2100006: 18 - Default
+    2100008: M_suelo
+    2100010: M_pared
+    2100012: metal_02
+    2100014: azul
+    2100016: 02 - Default
+    2100018: fewe
+    2100020: 06 - Default
+    2100022: 17 - Default
+    2100024: grwg
+    2100026: ge
+    2100028: 12 - Default
+    2300000: camion01
+    2300002: copiadora
+    2300004: plano_suelo
+    2300006: puerta_004
+    2300008: rodapie001
+    2300010: rodapie002
+    2300012: sala
+    2300014: suelo
+    2300016: tuberias_02
+    3300000: camion01
+    3300002: copiadora
+    3300004: plano_suelo
+    3300006: puerta_004
+    3300008: rodapie001
+    3300010: rodapie002
+    3300012: sala
+    3300014: suelo
+    3300016: tuberias_02
+    4300000: camion01
+    4300002: plano_suelo
+    4300004: sala
+    4300006: suelo
+    4300008: puerta_004
+    4300010: rodapie001
+    4300012: rodapie002
+    4300014: copiadora
+    4300016: tuberias_02
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -17,11 +17,14 @@ public class GameState : MonoBehaviour {
     // Use this for initialization
     void Start () {
         //GameMngr.Instance.setnumAfiliados(numAfiliados);
-        GameMngr.Instance.AfiliateNumber = numAfiliados;
-        GameMngr.Instance.setnumPoblacion(numPoblacion);
-        GameMngr.Instance.setBasedifficulty(Basedifficulty);
-        GameMngr.Instance.setMaxTroops(maxTroops);
-       
+        if (!GameMngr.Instance.getAlreadyInitialized())
+        {
+            GameMngr.Instance.AfiliateNumber = numAfiliados;
+            GameMngr.Instance.setnumPoblacion(numPoblacion);
+            GameMngr.Instance.setBasedifficulty(Basedifficulty);
+            GameMngr.Instance.setMaxTroops(maxTroops);
+            GameMngr.Instance.setAlreadyInitialized(true);
+        }
     }
 	
 	// Update is called once per frame
