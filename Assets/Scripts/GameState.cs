@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class GameState : MonoBehaviour {
 
-    public int numAfiliados = 1000;
-    public int numPoblacion = 0;
+    public int numAfiliados;
+    public int numPoblacion;
     public int Speechbox = 0;
     public int Spybox =0;
     public int hackerbox = 0;
-    public int Basedifficulty = 12;
+    public int Basedifficulty;
     
     public int maxTroops = 10;
 
@@ -18,7 +18,7 @@ public class GameState : MonoBehaviour {
     void Start () {
         //GameMngr.Instance.setnumAfiliados(numAfiliados);
         GameMngr.Instance.AfiliateNumber = numAfiliados;
-        GameMngr.Instance.setnumPoblacion(numPoblacion);
+        GameMngr.Instance.TotalPopulation = numPoblacion;
         GameMngr.Instance.setBasedifficulty(Basedifficulty);
         GameMngr.Instance.setMaxTroops(maxTroops);
        
