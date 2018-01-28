@@ -11,16 +11,18 @@ public class CanvasToggle : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.Return) && gameObject.activeSelf)
-        {
-            gameObject.SetActive(false);
-            GameMngr.Instance.SuccessMissions = 0;
-            GameMngr.Instance.FailedMissions = 0;
-            GameMngr.Instance.AgentsLost = 0;
-            GameMngr.Instance.AgentsGained = 0;
-
-        }
+       
 	}
 
+
+    public void ResetDataValues()
+    {
+        
+        GameMngr.Instance.SuccessMissions = 0;
+        GameMngr.Instance.FailedMissions = 0;
+        GameMngr.Instance.AgentsLost = 0;
+        GameMngr.Instance.AgentsGained = 0;
+    }
+    
     
 }
