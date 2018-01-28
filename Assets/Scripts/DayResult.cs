@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DayResult : MonoBehaviour {
 
+    public GameObject[] DistrictList;
     // Use this for initialization
     void Start() {
 
@@ -123,7 +124,7 @@ public class DayResult : MonoBehaviour {
             GameMngr.Instance.GetDataDistric()[index].infiltrado = true;
         }
         GameMngr.Instance.GetDataDistric()[index].victories++;
-        GameMngr.Instance.TotalPopulation += 1000;
+        GameMngr.Instance.AfiliateNumber += 1000;
         if(GameMngr.Instance.GetDataDistric()[index].victories % 3 == 0)
         {
             if(GameMngr.Instance.GetDataDistric()[index].Difficult != Enumdata.Influence.easy)
@@ -138,12 +139,28 @@ public class DayResult : MonoBehaviour {
         //eliminar 1 tropa del general
         GameMngr.Instance.MaxTroops--;
         //Regresar las tropas restantes
-
+        GameMngr.Instance.GetDataDistric()[i].infiltrado = false;
         //aumenta derrota
         Ddistrict.defeats++;
         //- 500 poblacion
         GameMngr.Instance.AfiliateNumber -= 500;
         // añadi penalizacion de tres derrotas?
 
+    }
+
+    public void UpdateDistrict()
+    {
+        for (int i=0; i < DistrictList.Length; i++)
+        {
+            //reseteamos y actualizamos el district
+            DistrictList[i].GetComponent<District>().SpeecherCount = 0;
+            DistrictList[i].GetComponent<District>().SpyCount = 0;
+            DistrictList[i].GetComponent<District>().HackerCount = 0;
+            // dificultad
+            DistrictList[i].GetComponent<District>().influence = GameMngr.Instance.GetDataDistric()[DistrictList[i].GetComponent<District>().IdDistrict].Difficult;
+           // DistrictList[i].GetComponent<District>().missionType = Random.RandomRange(Enumdata.MissionType.rescue, Enumdata.MissionType.inflitration);
+            public Enumdata.MissionType Mission = Enumdata.MissionType.rescue;
+
+}
     }
 }
