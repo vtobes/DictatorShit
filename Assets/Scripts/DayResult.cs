@@ -130,7 +130,6 @@ public class DayResult : MonoBehaviour {
         GameMngr.Instance.PreviousAfiliateNumber = GameMngr.Instance.AfiliateNumber;
 
         GameMngr.Instance.AfiliateNumber += 1000;
-
         if (GameMngr.Instance.GetDataDistric()[index].victories % 3 == 0)
         {
             if (GameMngr.Instance.GetDataDistric()[index].Difficult != Enumdata.Influence.easy)
@@ -173,9 +172,16 @@ public class DayResult : MonoBehaviour {
             DistrictList[i].GetComponent<District>().HackerCount = 0;
             // dificultad
             DistrictList[i].GetComponent<District>().influence = GameMngr.Instance.GetDataDistric()[DistrictList[i].GetComponent<District>().IdDistrict].Difficult;
-           // DistrictList[i].GetComponent<District>().missionType = Random.RandomRange(Enumdata.MissionType.rescue, Enumdata.MissionType.inflitration);
-            Enumdata.MissionType Mission = Enumdata.MissionType.rescue;
+            DistrictList[i].GetComponent<District>().missionType = (Enumdata.MissionType)Random.Range(0, 2);
 
+        }
+
+        // eliminar piezas colocadas
+        GameObject[] respawns = GameObject.FindGameObjectsWithTag("Colocadas");
+
+        foreach (GameObject respawn in respawns)
+        {
+            DestroyObject(respawn);
         }
     }
 }
