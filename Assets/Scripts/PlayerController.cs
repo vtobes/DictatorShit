@@ -69,9 +69,15 @@ public class PlayerController : MonoBehaviour
         //rb.MovePosition(auxPos * 5.0f * Time.deltaTime);
         if (transform.position == newPosition)
         {
-            isMoving = false;
-            anim.SetBool("isWalking", false);
+            StopWalking();
         }
     }
+
+    public void StopWalking()
+    {
+        isMoving = false;
+        anim.SetBool("isWalking", false);
+    }
+
 }
 
