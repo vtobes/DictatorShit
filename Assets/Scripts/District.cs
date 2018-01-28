@@ -183,7 +183,7 @@ public class District : MonoBehaviour {
         }
     }
 
-    private void inicializePositions(Enumdata.MissionType missionType)
+    public void inicializePositions(Enumdata.MissionType missionType)
     {
         switch (missionType)
         {
@@ -216,6 +216,7 @@ public class District : MonoBehaviour {
         }
         GameMngr.Instance.GetDataDistric()[IdDistrict].MaxAgents = maxPutPositions;
         GameMngr.Instance.GetDataDistric()[IdDistrict].Mission = missionType;
+        GameMngr.Instance.GetDataDistric()[IdDistrict].Difficult = influence;
     }
 
     private void OnTriggerEnter(Collider other)

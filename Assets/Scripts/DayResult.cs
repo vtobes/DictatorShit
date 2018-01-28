@@ -177,6 +177,7 @@ public class DayResult : MonoBehaviour {
             GameMngr.Instance.GetDataDistric()[i].Difficult = DistrictList[i].GetComponent<District>().influence;
             DistrictList[i].GetComponent<District>().missionType = (Enumdata.MissionType)Random.Range(0, 2);
             GameMngr.Instance.GetDataDistric()[i].Mission = DistrictList[i].GetComponent<District>().missionType;
+            DistrictList[i].GetComponent<District>().inicializePositions(DistrictList[i].GetComponent<District>().missionType);
         }
 
         // eliminar piezas colocadas
