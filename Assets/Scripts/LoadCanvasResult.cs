@@ -21,6 +21,7 @@ public class LoadCanvasResult : MonoBehaviour {
     {
         if(textsToFill.Length == 16)
         {
+            textsToFill[0].text = GameMngr.Instance.AfiliateNumber.ToString();
             textsToFill[0].text = (GameMngr.Instance.AfiliateNumber - GameMngr.Instance.PreviousAffiliateNumber).ToString();
             textsToFill[1].text = GameMngr.Instance.AfiliateNumber.ToString();
             textsToFill[2].text = GameMngr.Instance.SuccessMissions.ToString();
