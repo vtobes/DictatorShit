@@ -12,7 +12,9 @@ public class PlayerController : MonoBehaviour
     bool alreadyTurned;
     Vector3 auxPos;
     Ray ray;
-    Animator anim;
+
+    public GameObject player;
+    public Animator anim;
 
     // Use this for initialization
     void Start()
@@ -20,7 +22,6 @@ public class PlayerController : MonoBehaviour
         newPosition = transform.position;
         isMoving = false;
         alreadyTurned = true;
-        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -43,7 +44,6 @@ public class PlayerController : MonoBehaviour
         Plane plane = new Plane(Vector3.forward, transform.position);
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        Vector3 flipper = new Vector3(-1, 1, 1);
 
         float point;
         if (plane.Raycast(ray, out point))
@@ -53,12 +53,12 @@ public class PlayerController : MonoBehaviour
         }
         if (newPosition.x > transform.position.x && alreadyTurned == false)
         {
-            transform.localScale= Vector3.Scale(transform.localScale, flipper);
+            Flip();
             alreadyTurned = true;
         }
         else if (newPosition.x < transform.position.x && alreadyTurned == true)
         {
-            transform.localScale = Vector3.Scale(transform.localScale, flipper);
+            Flip();
             alreadyTurned = false;
         }
         isMoving = true;
@@ -74,6 +74,12 @@ public class PlayerController : MonoBehaviour
         {
             StopWalking();
         }
+    }
+
+    public void Flip()
+    {
+        Vector3 flipper = new Vector3(-1, 1, 1);
+        player.transform.localScale = Vector3.Scale(player.transform.localScale, flipper);
     }
 
     public void StopWalking()

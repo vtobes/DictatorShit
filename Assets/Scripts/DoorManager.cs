@@ -32,7 +32,6 @@ public class DoorManager : MonoBehaviour
         player.GetComponent<PlayerController>().StopWalking();
         player.transform.position = playerTP.position;
 
-
         cam.transform.position = camTP.position;
 
     }
